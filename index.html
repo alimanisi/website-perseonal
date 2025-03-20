@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iman Ali - Professional Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* General Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+  
+    html {
+      scroll-behavior: smooth;
+    }
+  
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+  
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+  
+    section {
+      padding: 80px 0;
+    }
+  
+    h1, h2, h3 {
+      font-weight: 600;
+    }
+  
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 50px;
+      text-align: center;
+      position: relative;
+    }
+  
+    .section-title::after {
+      content: '';
+      position: absolute;
+      width: 80px;
+      height: 3px;
+      background-color: #4169e1;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  
+    .section-title span {
+      color: #4169e1;
+    }
+  
+  /* Header - REDUCED SIZE */
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 5); /* Sangat transparan (20% opacity) */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Shadow lebih ringan */
+  z-index: 1000;
+  transition: all 0.3s ease;
+  padding: 5px 0; /* Reduced padding */
+}
+
+#header.sticky {
+  padding: 2px 0; /* Even smaller when sticky */
+  background-color: rgba(255, 255, 255, 0); /* Sedikit lebih solid saat sticky (30% opacity) */
+}
+
+.header.container {
+  padding: 8px 20px; /* Reduced padding */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#header {
+  box-shadow: none;
+}
+  
+.brand h1 {
+  color: #FFD700; /* Warna emas */
+  font-size: 24px;
+  margin: 0;
+}
+    .brand h1,
+.nav-list ul li a {
+  color: #FFD700; /* Warna teks hitam */
+}
+  
+    .brand a {
+      text-decoration: none;
+      color: #333;
+    }
+  
+    .brand h1 span {
+  color: #D4AF37; /* Warna emas lebih gelap untuk span */
+}
+  
+    .nav-list {
+      display: flex;
+      align-items: center;
+    }
+  
+    .nav-list ul {
+      display: flex;
+      list-style: none;
+    }
+  
+    .nav-list ul li {
+      margin-left: 25px;
+    }
+  
+    .nav-list ul li a {
+      text-decoration: none;
+      color: #FFD700;
+      font-weight: 500;
+      font-size: 0.95rem; /* Slightly smaller font */
+      transition: color 0.3s ease;
+      position: relative;
+    }
+  
+    .nav-list ul li a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background-color: #4169e1;
+      bottom: -5px;
+      left: 0;
+      transition: width 0.3s ease;
+    }
+  
+    .nav-list ul li a:hover {
+      color: #4169e1;
+    }
+  
+    .nav-list ul li a:hover::after {
+      width: 100%;
+    }
+  
+    /* FIXED HAMBURGER MENU */
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      width: 30px;
+      height: 25px;
+      position: relative;
+      z-index: 1001;
+    }
+  
+    .hamburger .bar {
+      width: 25px;
+      height: 3px;
+      background-color: #FFD700;
+      display: block;
+      margin: 4% 0;
+      transition: all 0.3s ease;
+    }
+
+   /* Bagian Hero */
+#hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    text-align: center;
+    color: white;
+}
+
+/* Video Latar Belakang */
+#hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Overlay Gelap Agar Teks Lebih Terbaca */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+/* Konten Hero */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Efek Animasi Masuk */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Gaya Judul */
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Efek Warna untuk Nama */
+.hero-content h1 span {
+    color: #f39c12;
+    font-size: 3.2rem;
+}
+h1 span {
+  margin-left: 2px; /* Spasi di sebelah kiri teks "Iman Ali" */
+}
+
+/* Deskripsi */
+.hero-content p {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+/* Tombol CTA */
+.cta {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    background: #f39c12;
+    border-radius: 30px;
+    transition: 0.3s ease;
+}
+
+.cta:hover {
+    background: #d35400;
+    transform: scale(1.05);
+}
+
+/* Responsif untuk Mobile */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content h1 span {
+        font-size: 2.7rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+
+    .cta {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}
+
+  
+
+  
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s forwards;
+    }
+  
+    .hero h1:nth-child(2) {
+      animation-delay: 0.5s;
+    }
+  
+    .hero h1:nth-child(3) {
+      animation-delay: 1s;
+    }
+  
+    .hero p {
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s forwards;
+      animation-delay: 1.5s;
+    }
+  
+    .cta {
+      display: inline-block;
+      padding: 12px 30px;
+      background-color: #4169e1;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s forwards;
+      animation-delay: 2s;
+    }
+  
+    .cta:hover {
+      background-color: #3151b5;
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(65, 105, 225, 0.4);
+    }
+  
+    /* Skills Section */
+    #skills {
+      background-color: #fff;
+    }
+  
+    .skills-top {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+  
+    .skills-top p {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  
+    .skills-bottom {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+  
+    .skills-item {
+      background-color: #f8f8f8;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+  
+    .skills-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+  
+    .skills-item .icon {
+      margin-bottom: 20px;
+    }
+  
+    .skills-item h2 {
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+    }
+  
+    /* Projects Section */
+    #projects {
+      background-color: #f8f8f8;
+    }
+  
+    .projects-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+  
+    .all-projects {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+    }
+  
+    .project-item {
+      display: flex;
+      flex-direction: row;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+    }
+  
+    .project-item:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+  
+    .project-info {
+      flex: 1;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  
+    .project-info h1 {
+      font-size: 1.8rem;
+      color: #4169e1;
+      margin-bottom: 10px;
+    }
+  
+    .project-info h2 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+  
+    .project-img {
+      flex: 1;
+      overflow: hidden;
+    }
+  
+    .project-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+  
+    .project-img:hover img {
+      transform: scale(1.1);
+    }
+  
+    /* About Section */
+    #about {
+      background-color: #fff;
+    }
+  
+    .about.container {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+    }
+  
+    .col-left {
+      flex: 1;
+    }
+  
+    .about-img {
+      position: relative;
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+  
+    .about-img::after {
+      content: '';
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 100%;
+      height: 100%;
+      border: 5px solid #4169e1;
+      z-index: -1;
+    }
+  
+    .about-img img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+  
+    .col-right {
+      flex: 1;
+    }
+  
+    .col-right h1 {
+      text-align: left;
+      margin-bottom: 20px;
+    }
+  
+    .col-right h1::after {
+      left: 0;
+      transform: translateX(0);
+    }
+  
+    .col-right h2 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      color: #4169e1;
+    }
+  
+    .col-right p {
+      margin-bottom: 30px;
+    }
+  
+    /* Education Section */
+    #education {
+      background-color: #f8f8f8;
+    }
+  
+    .education-items {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+  
+    .education-item {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+    }
+  
+    .education-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+  
+    .education-item h2 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #4169e1;
+    }
+  
+    .education-item h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+  
+    .education-item p {
+      color: #777;
+    }
+  
+    /* Contact Section */
+    #contact {
+      background-color: #fff;
+    }
+  
+    .contact-items {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+    .contact-link {
+    text-decoration: none; /* Hilangkan underline */
+    color: inherit; /* Warisi warna teks dari parent */
+    display: block; /* Buat elemen <a> menjadi block agar seluruh area bisa diklik */
+    width: 100%; /* Pastikan lebar 100% */
+    height: 100%; /* Pastikan tinggi 100% */
+}
+  
+.contact-item {
+    background-color: #f8f8f8;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    cursor: pointer; /* Ubah kursor menjadi pointer saat dihover */
+}
+  
+    .contact-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+  
+    .contact-item .icon {
+      margin-bottom: 20px;
+    }
+  
+    .contact-item h1 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #4169e1;
+    }
+  
+    .contact-item h2 {
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+  
+    /* Footer */
+    #footer {
+      background-color: #222;
+      color: #fff;
+    }
+  
+    .footer.container {
+      text-align: center;
+    }
+  
+    .footer .brand {
+      margin-bottom: 20px;
+    }
+  
+    .footer h2 {
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+      font-weight: 400;
+    }
+  
+    .social-icon {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+      gap: 20px;
+    }
+  
+    .social-item a {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      background-color: #4169e1;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1.5rem;
+      transition: all 0.3s ease;
+    }
+  
+    .social-item a:hover {
+      background-color: #3151b5;
+      transform: translateY(-5px);
+    }
+  
+    .footer p {
+      color: #aaa;
+    }
+  
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  
+    .animate-fadeIn {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease;
+    }
+  
+    .animate-fadeIn.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  
+    /* Responsive Design */
+    @media screen and (max-width: 768px) {
+      .hamburger {
+        display: block; /* Show hamburger on mobile */
+      }
+  
+      /* FIXED: Transform hamburger to X when active */
+      .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+  
+      .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+      }
+  
+      .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+  
+      .nav-list {
+        position: fixed;
+        top: 60px;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background-color: #fff;
+        padding: 50px;
+        transition: right 0.3s ease;
+        flex-direction: column;
+        align-items: flex-start;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+      }
+  
+      .nav-list.active {
+        right: 0;
+      }
+  
+      .nav-list ul {
+        flex-direction: column;
+        width: 100%;
+      }
+  
+      .nav-list ul li {
+        margin: 20px 0;
+      }
+  
+      /* Fixed hero section padding for mobile */
+      #hero {
+        padding-top: 60px;
+      }
+  
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+  
+      .project-item, .project-item:nth-child(even) {
+        flex-direction: column;
+      }
+  
+      .about.container {
+        flex-direction: column;
+      }
+  
+      .about-img {
+        margin-bottom: 30px;
+      }
+  
+      .col-right h1 {
+        text-align: center;
+      }
+  
+      .col-right h1::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  
+    @media screen and (max-width: 480px) {
+      .section-title {
+        font-size: 1.8rem;
+      }
+  
+      .hero h1 {
+        font-size: 2rem;
+      }
+  
+      .hero p {
+        font-size: 1rem;
+      }
+  
+      .education-items {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+  
+      .education-item {
+        padding: 15px;
+      }
+  
+      .education-item h2 {
+        font-size: 1.2rem;
+      }
+  
+      .education-item h3 {
+        font-size: 1rem;
+      }
+  
+      .education-item p {
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <section id="header">
+    <div class="header container">
+      <div class="brand">
+        <a href="#hero">
+          <h1><span>P</span>ortf</span>olio</h1>
+        </a>
+      </div>
+      <div class="nav-list">
+        <ul>
+          <li><a href="#hero" data-after="Home">Home</a></li>
+          <li><a href="#skills" data-after="Skills">Skills</a></li>
+          <li><a href="#projects" data-after="Projects">Projects</a></li>
+          <li><a href="#about" data-after="About">About</a></li>
+          <li><a href="#education" data-after="Education">Education</a></li>
+          <li><a href="#contact" data-after="Contact">Contact</a></li>
+        </ul>
+      </div>
+      <!-- FIXED: Hamburger menu outside of nav-list -->
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+  </section>
+  <!-- End Header -->
+
+  <section id="hero">
+    <video autoplay muted loop id="hero-video">
+        <source src="https://media.istockphoto.com/id/1904226409/id/video/bola-neon-3d-terbuat-dari-partikel-digital-yang-mengalir-dengan-latar-belakang-hitam-konsep.mp4?s=mp4-640x640-is&k=20&c=2JsIwSATOCTiyYu5MQ0raopd4h3MUACR7ITjo9jCnPY=" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="overlay"></div>
+    <div class="hero-content">
+        <h1>Hello, <span></span></h1>
+        <h1>My Name is <span>Iman Ali</span></h1>
+        <p>Front-End Developer & UI/UX Designer</p>
+        <a href="#about" class="cta">View Portfolio</a>
+    </div>
+</section>
+
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <div class="skills container">
+      <div class="skills-top">
+        <h1 class="section-title animate-fadeIn">Sk<span>i</span>lls</h1>
+        <p class="animate-fadeIn">Here are some of my technical and soft skills that I have developed over the years.</p>
+      </div>
+      <div class="skills-bottom">
+        <div class="skills-item animate-fadeIn">
+          <div class="icon"><i class="fas fa-code fa-3x" style="color: #4169e1;"></i></div>
+          <h2>Front-End Development</h2>
+          <p>Proficient in HTML, CSS, JavaScript, and frameworks like React.</p>
+        </div>
+        <div class="skills-item animate-fadeIn">
+          <div class="icon"><i class="fas fa-paint-brush fa-3x" style="color: #4169e1;"></i></div>
+          <h2>UI/UX Design</h2>
+          <p>Skilled in creating user-friendly interfaces using Figma and Adobe XD.</p>
+        </div>
+        <div class="skills-item animate-fadeIn">
+          <div class="icon"><i class="fas fa-puzzle-piece fa-3x" style="color: #4169e1;"></i></div>
+          <h2>Problem Solving</h2>
+          <p>Strong analytical skills to solve complex problems efficiently.</p>
+        </div>
+        <div class="skills-item animate-fadeIn">
+          <div class="icon"><i class="fas fa-users fa-3x" style="color: #4169e1;"></i></div>
+          <h2>Team Collaboration</h2>
+          <p>Experienced in working with cross-functional teams to deliver projects on time.</p>
+        </div>
+        <div class="skills-item animate-fadeIn">
+          <div class="icon"><i class="fas fa-tasks fa-3x" style="color: #4169e1;"></i></div>
+          <h2>Project Management Tools</h2>
+          <p>Proficient in using tools like Trello, Jira, and Asana to plan, track, and deliver projects efficiently.</p>
+        </div>
+        <div class="skills-item animate-fadeIn">
+          <div class="icon"><i class="fas fa-comments fa-3x" style="color: #4169e1;"></i></div>
+          <h2>Strong Communication</h2>
+          <p>Skilled in clear and effective communication, both verbal and written, to collaborate with teams and stakeholders.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Skills Section -->
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <div class="projects container">
+      <div class="projects-header">
+        <h1 class="section-title animate-fadeIn">Recent <span>Projects</span></h1>
+      </div>
+      <div class="all-projects">
+          <div class="project-item animate-fadeIn">
+              <div class="project-info">
+                  <h1>Project</h1>
+                  <h2>Student Course Registration System</h2>
+                  <p>Web-based student Course Registration System (KRS) using the Extreme Programming (XP) method.</p>
+                  <p><a href="https://ejournal.isha.or.id/index.php/Mandiri/article/view/363" target="_blank">Lihat Detail Proyek</a></p>
+              </div>
+              <div class="project-img">
+                <img src="./img/gambar1.jpg" alt="Student Course Registration System">
+              </div>
+          </div>
+        <!-- Add more projects as needed -->
+      </div>
+    </div>
+  </section>
+  <!-- End Projects Section -->
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="about container">
+      <div class="col-left animate-fadeIn">
+        <div class="about-img">
+          <img src="./img/gambar2.jpg" alt="">
+        </div>
+      </div>
+      <div class="col-right animate-fadeIn">
+        <h1 class="section-title">About <span>me</span></h1>
+        <h2>Front-End Developer & UI/UX Designer</h2>
+        <p>I am a passionate front-end developer with experience in building responsive and user-friendly websites. I specialize in HTML, CSS, JavaScript, and modern frameworks like React. I am always eager to learn new technologies and improve my skills to deliver the best solutions for my clients.</p>
+        <a href="https://drive.google.com/uc?export=download&id=1lr2j6CzyalG7LGr_kvRJrpwGsA23DVY9" class="cta">Download Resume</a>
+      </div>
+    </div>
+  </section>
+  <!-- End About Section -->
+
+  <!-- Education Section -->
+  <section id="education">
+    <div class="education container">
+      <h1 class="section-title animate-fadeIn">Educa<span>tion</span></h1>
+      <div class="education-items">
+        <div class="education-item animate-fadeIn">
+          <h2>Bachelor of Computer Science</h2>
+          <h3>University Tama Jagakarsa</h3>
+          <p>2020 - 2024</p>
+        </div>
+        <div class="education-item animate-fadeIn">
+          <h2>Web Design Certificate</h2>
+          <h3>Workshop</h3>
+          <p>2021</p>
+        </div>
+        <div class="education-item animate-fadeIn">
+          <h2>MSIB</h2>
+          <h3>Internship and Independent Study Socialization</h3>
+          <p>2023</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Education Section -->
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="contact container">
+      <div>
+        <h1 class="section-title animate-fadeIn">Contact <span>info</span></h1>
+      </div>
+      <div class="contact-items">
+        <!-- Phone (WhatsApp) -->
+        <div class="contact-item animate-fadeIn">
+            <a href="https://wa.me/6281382921367" target="_blank" class="contact-link">
+                <div class="icon"><i class="fas fa-phone fa-3x" style="color: #4169e1;"></i></div>
+                <div class="contact-info">
+                    <h1>Phone</h1>
+                    <h2>+62 813 8292 1367</h2>
+                </div>
+            </a>
+        </div>
+    
+        <!-- Email -->
+        <div class="contact-item animate-fadeIn">
+            <a href="mailto:imanalinurdin6717@gmail.com" target="_blank" class="contact-link">
+                <div class="icon"><i class="fas fa-envelope fa-3x" style="color: #4169e1;"></i></div>
+                <div class="contact-info">
+                    <h1>Email</h1>
+                    <h2>imanalinurdin6717@gmail.com</h2>
+                </div>
+            </a>
+        </div>
+    
+        <!-- Address (Google Maps) -->
+        <div class="contact-item animate-fadeIn">
+            <a href="https://www.google.com/maps/search/?api=1&query=Jakarta%20Timur%2C%20Indonesia" target="_blank" class="contact-link">
+                <div class="icon"><i class="fas fa-map-marker-alt fa-3x" style="color: #4169e1;"></i></div>
+                <div class="contact-info">
+                    <h1>Address</h1>
+                    <h2>Jakarta Timur, Indonesia</h2>
+                </div>
+            </a>
+        </div>
+    </div>
+    </div>
+  </section>
+  <!-- End Contact Section -->
+
+  <!-- Footer -->
+  <section id="footer">
+    <div class="footer container">
+      <div class="brand">
+        <h1><span>I</span>man <span>A</span>li</h1>
+      </div>
+      <h2>Your Complete Web Solution</h2>
+      <div class="social-icon">
+        <div class="social-item">
+          <a href="https://facebook.com/imanali"><i class="fab fa-facebook-f"></i></a>
+        </div>
+        <div class="social-item">
+          <a href="https://instagram.com/imanali"><i class="fab fa-instagram"></i></a>
+        </div>
+        <div class="social-item">
+          <a href="https://twitter.com/imanali"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="social-item">
+          <a href="https://linkedin.com/in/iman-ali-187573281"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <p>Copyright © 2023 Iman Ali. All rights reserved</p>
+    </div>
+  </section>
+  <!-- End Footer -->
+
+  <script>
+    // FIXED Hamburger menu toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navList = document.querySelector('.nav-list');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navList.classList.toggle('active');
+    });
+
+    // Close menu when clicking a nav item
+    document.querySelectorAll('.nav-list ul li a').forEach(item => {
+      item.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navList.classList.remove('active');
+      });
+    });
+
+    // Sticky header
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('#header');
+      if (window.scrollY > 100) {
+        header.classList.add('sticky');
+      } else {
+        header.classList.remove('sticky');
+      }
+    });
+
+    // Scroll animations
+    const animatedElements = document.querySelectorAll('.animate-fadeIn');
+
+    const checkScroll = () => {
+      const triggerBottom = window.innerHeight / 1.1;
+
+      animatedElements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+
+        if (elementTop < triggerBottom) {
+          element.classList.add('active');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', checkScroll);
+    window.addEventListener('load', checkScroll);
+
+    // Typed effect for hero section
+    const heroTexts = document.querySelectorAll('#hero h1');
+    heroTexts.forEach((text, index) => {
+      const span = text.querySelector('span');
+      if (span) {
+        const textContent = text.textContent.replace(span.textContent, '');
+        const letters = textContent.split('');
+        text.textContent = '';
+        text.appendChild(span);
+        
+        letters.forEach((letter, i) => {
+          setTimeout(() => {
+            const letterSpan = document.createElement('span');
+            letterSpan.textContent = letter;
+            letterSpan.style.display = 'inline-block';
+            letterSpan.style.animation = `fadeInUp 0.5s forwards ${i * 0.05}s`;
+            text.insertBefore(letterSpan, span);
+          }, (index * 1000) + (i * 50));
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>
